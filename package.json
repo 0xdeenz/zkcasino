@@ -1,0 +1,23 @@
+{
+  "name": "zkcasino",
+  "version": "0.0.1",
+  "description": "A decentralized casino where you can keep your wins (and losses) private, powered by zk-SNARKs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xdeenz/zkcasino.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xdeenz/zkcasino/issues"
+  },
+  "homepage": "https://github.com/0xdeenz/zkcasino#readme",
+  "devDependencies": {
+    "circom": "^0.5.46",
+    "circomlib": "^2.0.5"
+  }
+}
