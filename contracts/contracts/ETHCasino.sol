@@ -87,7 +87,7 @@ contract ETHCasino is Casino {
         uint256 _betAmount,
         uint256 _gameMode,
         uint256 _guess,
-        uint256 _rng
+        bytes32 _rng
     ) external {
         require(msg.sender == address(randomOracle), "Can only be called by random oracle");
 

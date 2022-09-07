@@ -31,6 +31,8 @@ contract RandomOracle {
         uint256 _gameMode,
         uint256 _guess
     ) external {
+        require(msg.sender == address(casino), "Can only be called by the casino contract");
+
         casino.oracleCallback(
             _recipient,
             _relayer,
@@ -38,7 +40,7 @@ contract RandomOracle {
             _betAmount,
             _gameMode,
             _guess,
-            uint256(keccak256(abi.encodePacked(block.timestamp)))
+            keccak256(abi.encodePacked(block.timestamp))        
         );
     }
 }

@@ -8,27 +8,17 @@ contract CasinoReturns {
         uint256 betAmount,
         uint256 gameMode,
         uint256 guess,
-        uint256 rng
-    ) external view returns (uint256) {
+        bytes32 rng
+    ) external pure returns (uint256) {
         if (gameMode == 0) return _coinToss(betAmount, guess, rng);
-        else if (gameMode == 1) return _lottery(betAmount, guess, rng);
-        else if (gameMode == 2) return _roulette(betAmount, guess, rng);
-        else if (gameMode == 3) return _twoDice(betAmount, guess, rng);
+        else revert("Invalid game mode");
     }
 
-    function _coinToss(uint256 betAmount, uint256 guess, uint256 rng) internal returns (uint256 payout) {
+    function _coinToss(uint256 betAmount, uint256 guess, bytes32 rng) internal pure returns (uint256 payout) {
+        require(guess == 0 || guess == 1, "Guess can only be 0 for heads or 1 for tails");
+        uint8 draw = uint8(uint256(rng) & 1);
 
-    }
-
-    function _lottery(uint256 betAmount, uint256 guess, uint256 rng) internal returns (uint256 payout) {
-
-    }
-
-    function _roulette(uint256 betAmount, uint256 guess, uint256 rng) internal returns (uint256 payout) {
-
-    }
-
-    function _twoDice(uint256 betAmount, uint256 guess, uint256 rng) internal returns (uint256 payout) {
-
+        if (draw == guess) return betAmount * 198 / 100;
+        else return 0;
     }
 }
