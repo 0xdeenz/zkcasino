@@ -7,6 +7,8 @@ An oddly familiar feel to the now defunct protocol called something like _'Cyclo
 
 >The house can take your money, in a cryptographically sound and provably fair way.
 
+Currently discontinued: for it to work it would require a random number to be generated and stored every block.
+
 ## Build
 
 ## How it Works
